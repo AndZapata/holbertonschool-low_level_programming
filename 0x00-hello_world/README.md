@@ -1,0 +1,1 @@
+In this directory, we are going to start the compiling programming in C, in other words, this is the starting part. In that sense, it starts with the preprocessor, compiler, assambler, and linking; witch are the process working in C.
