@@ -1,10 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- *main = Entry point
- *
- *return 0 (success)
+/**
+ * main - entry point
+ * funtion_name - if else if
+ * Description - Prints possitive, negative, zero, depending the case
+ * section header: int n
+ * Return: 0 (success)
  */
 int main(void)
 {
