@@ -16,7 +16,7 @@ int main(void)
 	{
 /*for to loop the numbers since 0 to 9*/
 		putchar(number + '0');
-	if(number < 9)
+	if (number < 9)
 	{
 		putchar(',');
 		putchar(' ');
