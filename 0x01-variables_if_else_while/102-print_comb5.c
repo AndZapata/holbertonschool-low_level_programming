@@ -10,36 +10,27 @@
  */
 int main(void)
 {
-	int th, h, t, u;
+	int th, du;
 
-	for (th = '0' ; th <= '9' ; th++)
+	for (th = 0; th < 100; th++)
 	{
-		for (h = '0' ; h <= '8' ; h++)
+		for (du = th + 1; du < 100; du++)
 		{
-			for (t = '0' ; t <= '9' ; t++)
+			putchar((th / 10) + '0');
+			putchar((th % 10) + '0');
+			putchar(' ');
+			putchar((du / 10) + '0');
+			putchar((du % 10) + '0');
+			if (th == 98 && du == 99)
 			{
-				for (u = '0' ; u <= '9' ; u++)
-				{
-					if ((th <= t || h <= u) && (th != t || h != u))
-					{
-						putchar(th);
-						putchar(h);
-						putchar(' ');
-						putchar(t);
-						putchar(u);
-						if (th == '9' && h == '8' && t == '9' && u == '9')
-						{
-							putchar('\n');
-						}
-						else
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
-				}
+			}
+			else
+			{
+			putchar(',');
+			putchar(' ');
 			}
 		}
 	}
+	putchar('\n');
 	return (0);
 }
