@@ -14,13 +14,13 @@ int main(void)
 
 	for (th = '0' ; th <= '9' ; th++)
 	{
-		for (h = '0' ; h <= '9' ; h++)
+		for (h = '0' ; h <= '8' ; h++)
 		{
 			for (t = '0' ; t <= '9' ; t++)
 			{
 				for (u = '0' ; u <= '9' ; u++)
 				{
-					if (h < u)
+					if ((th <= t || h <= u) && (th != t || h != u))
 					{
 						putchar(th);
 						putchar(h);
@@ -29,17 +29,17 @@ int main(void)
 						putchar(u);
 						if (th == '9' && h == '8' && t == '9' && u == '9')
 						{
+							putchar('\n');
 						}
 						else
 						{
-						putchar(',');
-						putchar(' ');
+							putchar(',');
+							putchar(' ');
 						}
 					}
 				}
 			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
