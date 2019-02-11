@@ -1,6 +1,7 @@
 #include <holberton.h>
 #include <stdio.h>
 /**
+ * main - Entry point
  * function_name - int main(void) that means you don't have to return a value
  *
  * Description: The current file will print Holberton.
@@ -10,12 +11,15 @@
 
 int main(void)
 {
-	int hol;
-
-	for (hol = 'Holberton')
-	{
-		putchar(hol);
-	}
+	putchar('H');
+	putchar('o');
+	putchar('l');
+	putchar('b');
+	putchar('e');
+	putchar('r');
+	putchar('t');
+	putchar('o');
+	putchar('n');
 	putchar('\n');
 	return (0);
 }
