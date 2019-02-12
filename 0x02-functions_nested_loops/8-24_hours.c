@@ -2,10 +2,7 @@
 /**
  * jack_bauer - prints numbers from 00:00 to 23:59
  *
- *
- * Description: The current file will print 0 or 1 depending if it's lowercase
- *
- * Return: r if it is positive, and -r if it is negative
+ * Description: The current file will print 00:00 to 23:59
  */
 void jack_bauer(void)
 {
