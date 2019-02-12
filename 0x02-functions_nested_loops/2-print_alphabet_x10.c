@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_alphabet - Entry point
+ * print_alphabet_x10 - Entry point
  * function_name - print alphabet from a to z in order, in lowercase
  *
  * Description: The current file will print alphabet in lowercase
