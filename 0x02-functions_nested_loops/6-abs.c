@@ -2,7 +2,7 @@
 /**
  * _abs - prints the absolute value of an integer
  *
- * @n: variable that prints the absolute value
+ * @r: variable that prints the absolute value
  *
  * Description: The current file will print 0 or 1 depending if it's lowercase
  *
