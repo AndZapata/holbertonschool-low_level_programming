@@ -16,28 +16,31 @@ void times_table(void)
 		for (y = 0; y <= 9; y++)
 		{
 			z = x * y;
-			if (x < 10 && y != 0)
+			if (z <= 9)
 			{
+				if (y > 0)
+				{
 				_putchar(32);
-			}
-			if (z > 9)
-			{
-			_putchar((z / 10) + 48);
-			_putchar((z % 10) + 48);
-			}
-			else
-			{
+				_putchar(32);
+				}
 				_putchar(z + 48);
-			}
-			if (y == 9)
-			{
-				_putchar(10);
+				if (y != 9)
+				{
+					_putchar(44);
+				}
+
 			}
 			else
 			{
-				_putchar(44);
 				_putchar(32);
+				_putchar((z / 10) + 48);
+				_putchar((z % 10) + 48);
+				if (y != 9)
+				{
+					_putchar(44);
+				}
 			}
 		}
+		_putchar(10);
 	}
 }
