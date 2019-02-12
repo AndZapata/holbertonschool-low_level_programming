@@ -1,5 +1,4 @@
-#include <holberton.h>
-#include <stdio.h>
+#include "holberton.h"
 /**
  * main - Entry point
  * function_name - int main(void) that means you don't have to return a value
@@ -11,15 +10,15 @@
 
 int main(void)
 {
-	putchar('H');
-	putchar('o');
-	putchar('l');
-	putchar('b');
-	putchar('e');
-	putchar('r');
-	putchar('t');
-	putchar('o');
-	putchar('n');
-	putchar('\n');
+	_putchar('H');
+	_putchar('o');
+	_putchar('l');
+	_putchar('b');
+	_putchar('e');
+	_putchar('r');
+	_putchar('t');
+	_putchar('o');
+	_putchar('n');
+	_putchar('\n');
 	return (0);
 }
