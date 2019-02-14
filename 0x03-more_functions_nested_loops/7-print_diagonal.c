@@ -11,17 +11,23 @@ void print_diagonal(int n)
 	int d;
 	int c;
 
-	for (d = 0; d <= n; d++)
+	if (n > 0)
 	{
-		for (c = 0; c < n; c++)
+		for (d = 0; d <= n; d++)
 		{
-			if (d < c)
-				;
-			else if (d > c && d < n)
-				_putchar(32);
-			else if (d == c)
-				_putchar(92);
+			for (c = 0; c < n; c++)
+			{
+				if (d < c)
+					;
+				else if (d > c && d < n)
+					_putchar(32);
+				else if (d == c)
+					_putchar(92);
+			}
+			if (d < n)
+			_putchar(10);
 		}
-		_putchar(10);
 	}
+	else
+		_putchar(10);
 }
