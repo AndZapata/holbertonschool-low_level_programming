@@ -7,16 +7,15 @@
  */
 int main(void)
 {
-	int n;
 	int a;
+	int n;
 
 	n = 0;
-
 	for (a = 1; a < 1024; a++)
 	{
-		n = n + a;
-		if ((n % 3 == 0) || (n % 5 == 0))
+		if ((a % 3 == 0) || (a % 5 == 0))
 		{
+			n = n + a;
 			printf("%d\n", n);
 		}
 	}
