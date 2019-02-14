@@ -14,7 +14,7 @@ void print_line(int n)
 	{
 		if (d > 0)
 		{
-			_putchar(45);
+			_putchar('_');
 		}
 	}
 	_putchar(10);
