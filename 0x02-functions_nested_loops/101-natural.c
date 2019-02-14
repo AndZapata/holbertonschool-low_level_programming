@@ -14,10 +14,8 @@ int main(void)
 	for (a = 1; a < 1024; a++)
 	{
 		if ((a % 3 == 0) || (a % 5 == 0))
-		{
 			n = n + a;
-			printf("%d\n", n);
-		}
 	}
+	printf("%d\n", n);
 	return (0);
 }
