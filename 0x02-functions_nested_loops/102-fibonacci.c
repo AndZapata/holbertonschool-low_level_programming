@@ -15,7 +15,7 @@ int main(void)
 	n = 1;
 	s = 2;
 	printf("%lu, %lu", n, s);
-	for (a = 0; a < 48; a++)
+	for (a = 0; a < 47; a++)
 	{
 			z = n + s;
 			n = s;
