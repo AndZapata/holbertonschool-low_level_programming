@@ -16,8 +16,8 @@ void print_diagonal(int n)
 		for (c = 0; c < n; c++)
 		{
 			if (d < c)
-				_putchar(32);
-			else if (d > c)
+				;
+			else if (d > c && d < n)
 				_putchar(32);
 			else if (d == c)
 				_putchar(92);
