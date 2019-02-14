@@ -16,7 +16,7 @@ int main(void)
 	n = 1;
 	s = 2;
 	x = 2;
-	for (a = 0 ; a < 35 ; a++)
+	for (a = 0 ; a < 29 ; a++)
 	{
 		z = n + s;
 		n = s;
