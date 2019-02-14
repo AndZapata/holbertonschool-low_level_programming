@@ -15,12 +15,12 @@ int main(void)
 	n = 1;
 	s = 2;
 	printf("%lu, %lu", n, s);
-	for (a = 0; a <= 47; a++)
+	for (a = 0 ; a < 48 ; a++)
 	{
-			z = n + s;
-			n = s;
-			s = z;
-			printf(", %lu", z);
+		z = n + s;
+		n = s;
+		s = z;
+		printf(", %lu", z);
 	}
 	printf("\n");
 	return (0);
