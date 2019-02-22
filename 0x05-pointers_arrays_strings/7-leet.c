@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * cap_string - string from lowercase to uppercase
+ * leet - leet 1337
  *@m: string from main
  *
  * Return: Always 0.
