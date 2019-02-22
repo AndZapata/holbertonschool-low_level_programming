@@ -12,7 +12,7 @@ char *cap_string(char *m)
 	int z;
 	char x[] = " \n\t,;.!?\"(){}";
 
-	for (len = 1; m[len]; len++)
+	for (len = 0; m[len]; len++)
 	{
 		for (z = 0; x[z]; z++)
 		{
