@@ -14,6 +14,8 @@ char *cap_string(char *m)
 
 	for (len = 0; m[len]; len++)
 	{
+		if (m[0] >= 97 && m[0] <= 122)
+			m[0] = m[0] - 32;
 		for (z = 0; x[z]; z++)
 		{
 			if (m[len - 1] == x[z])
