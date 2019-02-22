@@ -9,14 +9,17 @@
 char *cap_string(char *m)
 {
 	int len;
+	int z;
+	char x[] = " \n\t,;.!?\"(){}";
 
-	for (len = 0; m[len] != '\0'; len++)
+	for (len = 1; m[len]; len++)
 	{
-		if (m[len - 1] >= 9 && m[len - 1] <= 64)
+		for (z = 0; x[z]; z++)
 		{
-			if (m[len] >= 97 && m[len] <= 122)
+			if (m[len - 1] == x[z])
 			{
-				m[len] = m[len] - 32;
+				if (m[len] >= 97 && m[len] <= 122)
+					m[len] = m[len] - 32;
 			}
 		}
 	}
