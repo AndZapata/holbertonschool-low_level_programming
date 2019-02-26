@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _strstr - locates part of a string
  * @haystack: is a pointer
@@ -11,12 +12,16 @@ char *_strstr(char *haystack, char *needle)
 	int len;
 	int len2;
 
-	for (len2 = 0; needle[len2]; len2++)
+	for (len = 0; haystack[len]; len++)
 	{
-		for (len = 0; haystack[len]; len++)
+		for (len2 = 0; needle[len2]; len2++)
 		{
-			if (needle[len2] == haystack[len])
-				return (haystack + len);
+			if (haystack[len] == needle[len2])
+				return (haystack + len2);
+		}
+		if (needle[len2] == 0)
+		{
+		return (haystack + len2);
 		}
 	}
 	return (0);
