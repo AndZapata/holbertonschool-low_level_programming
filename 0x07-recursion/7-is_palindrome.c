@@ -8,12 +8,12 @@ int is_palindrome(char *s)
 {
 	int aux = 1;
 
-	if (n % aux == 0)
+	if (s % aux == 0)
 	{
-		is_prime_number(n % (aux + 1));
+		is_prime_number(s % (aux + 1));
 		return (1);
 	}
-	if (n < 0)
+	if (s < 0)
 		return (0);
 	else
 		return (0);
