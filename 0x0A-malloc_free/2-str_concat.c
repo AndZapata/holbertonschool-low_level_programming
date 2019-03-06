@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _str_concat - concatenates two strings
+ * str_concat - concatenates two strings
  * @s1: first string
  * @s2: Second string
  * Return: Nothing.
@@ -11,9 +11,10 @@ char *str_concat(char *s1, char *s2)
 	char *concat;
 	int len1, len2, sum = 0;
 
-	if ((s1 == 0) || (s2 == 0))
-		return ("");
-
+	if (s1 == 0)
+		s1 == "";
+	if (s2 == 0)
+		s2 == "";
 	for (len1 = 0; s1[len1]; len1++)
 	{
 	}
