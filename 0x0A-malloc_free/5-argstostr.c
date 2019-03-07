@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * argstostr - concatenates two strings
  * @ac: first string
@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 			d++;
 		}
 	}
-	printf("%i / %i", d, ac);
+
 	a = malloc(sizeof(char) * (d + ac + 1));
 	d = 0;
 	if (a == 0)
