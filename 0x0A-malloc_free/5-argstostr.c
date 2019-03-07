@@ -29,6 +29,7 @@ char *argstostr(int ac, char **av)
 			a[d] = av[b][c];
 			d++;
 		}
+		a[d] = 0;
 		if (av[b][c] == '\0')
 		{
 			a[d] = '\n';
