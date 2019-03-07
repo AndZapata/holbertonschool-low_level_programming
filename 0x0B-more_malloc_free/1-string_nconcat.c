@@ -19,16 +19,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (s1a = 0; s1[s1a]; s1a++)
 	{
 	}
-	for (s2b = 0; s2b < n && s2[s2b]; s2b++)
+	for (s2b = 0; s2[s2b]; s2b++)
 	{
 	}
-	sum = s1a + s2b;
+	if (n >= s2b)
+		sum = s1a + s2b + 1;
+	else
+		sum = s1a + n + 1;
 	concat = malloc(sizeof(char) * sum + 1);
 	if (concat == 0)
 		return (0);
 	for (s1a = 0; s1[s1a]; s1a++)
 		concat[s1a] = s1[s1a];
-	for (s2b = 0; s2b < n && s2[s2b]; s2b++)
-		concat[s1a + s2b] = s2[s2b];
+	if (n >= s2b)
+		for (s2b = 0; s2[s2b]; s2b++)
+			concat[s1a + s2b] = s2[s2b];
+	else
+		for (s2b = 0; s2b < n; s2b++)
+			concat[s1a + s2b] = s2[s2b];
+	concat[s1a + s2b] = 0;
 	return (concat);
 }
