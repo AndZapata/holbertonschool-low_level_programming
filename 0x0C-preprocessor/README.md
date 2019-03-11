@@ -1,0 +1,1 @@
+0x0C proyect from holberton school. Doing predefine macros.
