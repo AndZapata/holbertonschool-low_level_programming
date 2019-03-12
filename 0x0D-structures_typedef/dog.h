@@ -2,7 +2,7 @@
 #define DOG
 
 /**
- * typedef struct dog - Define the new typedefinition structure dog
+ * struct dog - Define the new typedefinition structure dog
  * @name: name of the dog
  * @age: age of the dog
  * @owner: name of the owner of the dog
