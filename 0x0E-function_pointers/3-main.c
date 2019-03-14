@@ -12,7 +12,10 @@ int main(int argc, char *argv[])
 	int d;
 
 	if (argc != 4)
+	{
+		printf("Error\n");
 		exit(98);
+	}
 	c = get_op_func(argv[2]);
 	if (argv[2][1] != '\0' || c == NULL)
 	{
