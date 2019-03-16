@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			z = va_arg(x, char *);
-			if (!z)
+			if (z == NULL)
 			{
 				printf("%p", z);
 				break;
