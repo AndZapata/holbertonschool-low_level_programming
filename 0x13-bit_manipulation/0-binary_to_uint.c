@@ -15,7 +15,7 @@ int _pow_recursion(int x, int y)
 }
 
 /**
- * binary_to_unit - converts a binary number to an unsigned int
+ * binary_to_uint - converts a binary number to an unsigned int
  * @b: is the string of binary numbers
  *
  * Return: always 0
@@ -25,6 +25,8 @@ unsigned int binary_to_uint(const char *b)
 	int len, i, k = 0;
 	unsigned int sum = 0;
 
+	if (!b)
+		return (0);
 	for (len = 0; b[len]; len++)
 	{ }
 	for (i = 0; i < len; i++)
