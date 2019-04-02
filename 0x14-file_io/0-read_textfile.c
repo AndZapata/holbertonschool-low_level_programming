@@ -26,13 +26,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (len == -1)
 	{
 		close(file);
-		return(0);
+		return (0);
 	}
 	wr = write(STDOUT_FILENO, buf, len);
 	if (wr == -1)
 	{
 		close(file);
-		return(0);
+		return (0);
 	}
 	close(file);
 	return (len);
