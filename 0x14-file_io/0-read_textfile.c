@@ -16,24 +16,28 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 		return (0);
-	buf = malloc(sizeof(letters));
+	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
 	{
 		close(file);
+		free(buf);
 		return (0);
 	}
 	len = read(file, buf, letters);
 	if (len == -1)
 	{
 		close(file);
+		free(buf);
 		return (0);
 	}
 	wr = write(STDOUT_FILENO, buf, len);
 	if (wr == -1)
 	{
 		close(file);
+		free(buf);
 		return (0);
 	}
 	close(file);
+	free(buf);
 	return (len);
 }
