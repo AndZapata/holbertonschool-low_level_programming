@@ -36,10 +36,10 @@ int main(int ac, char *av[])
 	}
 	len = close(file_from);
 	wr = close(file_to);
-	if (wr == -1)
+	if (len == -1)
 		dprintf(STDERR_FILENO,
 			"Error: Can't close fd %i\n", file_to), exit(100);
-	if (len == -1)
+	if (wr == -1)
 		dprintf(STDERR_FILENO,
 			"Error: Can't close fd %i\n", file_from), exit(100);
 	return (0);
