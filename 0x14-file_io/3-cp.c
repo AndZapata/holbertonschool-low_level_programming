@@ -13,38 +13,34 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
-		return (STDOUT_FILENO);
 	}
 	file_from = open(av[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		printf("Error: Can't read from file %s\n", av[1]);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
-		return (STDERR_FILENO);
 	}
 	len = read(file_from, buffer, 1024);
 	if (len == -1)
 	{
-		close(file_from);
-		return (-1);
+		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
 	}
 	file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
-		printf("Error: Can't read from file %s\n", av[2]);
+		dprintf(2, "Error: Can't read from file %s\n", av[2]);
 		exit(99);
-		return (STDERR_FILENO);
 	}
 	write(file_to, buffer, len);
 
 	conf = close(file_to);
 	if (conf == -1)
 	{
-		printf("Error: Can't close fd %d\n", conf);
+		dprintf(2, "Error: Can't close fd %d\n", conf);
 		exit(100);
-		return (STDERR_FILENO);
 	}
 	return (STDOUT_FILENO);
 }
