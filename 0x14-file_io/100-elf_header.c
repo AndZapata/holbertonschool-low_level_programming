@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * main - Entry point ELF
  * @av: name of the file to create
  * @ac: letteres to be printed
  * Return: Always 1 (Success).
