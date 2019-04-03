@@ -44,7 +44,7 @@ int main(int ac, char *av[])
 	{
 		printf("Error: Can't close fd %d\n", conf);
 		exit(100);
-		return(STDERR_FILENO);
+		return (STDERR_FILENO);
 	}
 	return (STDOUT_FILENO);
 }
