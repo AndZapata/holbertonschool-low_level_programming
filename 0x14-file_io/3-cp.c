@@ -26,7 +26,7 @@ int main(int ac, char *av[])
 		wr = write(file_to, buffer, len);
 		if (file_to == -1 || wr != len)
 			dprintf(STDERR_FILENO,
-				"Error: Can't write to file %s\n", av[2]),
+				"Error: Can't write to %s\n", av[2]),
 				exit(99);
 		len = read(file_from, buffer, 1024);
 		if (file_from == -1)
