@@ -8,7 +8,8 @@
  */
 int main(int ac, char *av[])
 {
-	int file_from, len = 0, file_to, wf = 0, conf;
+	int file_from, file_to;
+	ssize_t len = 1024, wr;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -20,26 +21,26 @@ int main(int ac, char *av[])
 	if (len == -1)
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", av[1]), exit(98);
-	while (len != 0)
+	while (len != '\0')
 	{
-		wf = write(file_to, buffer, len);
-		if (file_to == -1 || wf == -1)
+		wr = write(file_to, buffer, len);
+		if (file_to == -1 || wr != len)
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to file %s\n", av[2]),
 				exit(99);
 		len = read(file_from, buffer, 1024);
-		if (file_from == -1 || len == -1)
+		if (file_from == -1)
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", av[1]),
 				exit(98);
 	}
 	len = close(file_from);
-	conf = close(file_to);
-	if (conf == -1)
+	wr = close(file_to);
+	if (wr == -1)
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", conf), exit(100);
+			"Error: Can't close fd %i\n", file_to), exit(100);
 	if (len == -1)
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", len), exit(100);
+			"Error: Can't close fd %i\n", file_from), exit(100);
 	return (0);
 }
