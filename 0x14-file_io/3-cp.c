@@ -34,13 +34,17 @@ int main(int ac, char *av[])
 				"Error: Can't read from file %s\n", av[1]),
 				exit(98);
 	}
-	len = close(file_from);
-	wr = close(file_to);
-	if (len == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", file_to), exit(100);
-	if (wr == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", file_from), exit(100);
+	len = close(file_to);
+	wr = close(file_from);
+	if (len == -1 || wr == -1)
+	{
+		if (len == -1)
+			dprintf(STDERR_FILENO,
+				"Error: Can't close fd %i\n", file_to);
+		if (wr == -1)
+			dprintf(STDERR_FILENO,
+				"Error: Can't close fd %i\n", file_from);
+		exit(100);
+	}
 	return (0);
 }
