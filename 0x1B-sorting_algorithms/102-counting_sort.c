@@ -35,9 +35,12 @@ void counting_sort(int *array, size_t size)
 {
 
 	size_t i, max = maximum(array, size);
-	int counting_array[1000000];
-	int array2[1000000];
+	int counting_array[10000];
+	int array2[10000];
 	int num = 0, tmp;
+
+	for (i = 0; i < 10000 - 1; i++)
+		counting_array[i] = '\0';
 
 	if (!array || size < 2)
 		return;
@@ -54,7 +57,7 @@ void counting_sort(int *array, size_t size)
 	print_array(counting_array, max + 1);
 	num = 0;
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		while (array2[num] > 0)
 		{
