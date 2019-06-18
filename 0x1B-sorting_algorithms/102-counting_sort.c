@@ -35,8 +35,8 @@ void counting_sort(int *array, size_t size)
 {
 
 	size_t i, max = maximum(array, size);
-	int counting_array[100000];
-	int array2[100000];
+	int counting_array[1000000];
+	int array2[1000000];
 	int num = 0, tmp;
 
 	if (!array || size < 2)
