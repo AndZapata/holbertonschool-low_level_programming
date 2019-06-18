@@ -34,18 +34,13 @@ size_t maximum(int *array, int size)
 void counting_sort(int *array, size_t size)
 {
 
-	size_t i;
-	size_t max = maximum(array, size);
-	int *counting_array = malloc(sizeof(int) * (max + 1));
-	int *array2 = malloc(sizeof(int) * (max + 1));
+	size_t i, max = maximum(array, size);
+	int counting_array[1000];
+	int array2[1000];
 	int num = 0, tmp;
 
-	if (!counting_array || !array2 || !array || size < 2)
-	{
-		free(counting_array);
-		free(array2);
+	if (!array || size < 2)
 		return;
-	}
 	for (i = 0; i < size; i++)
 		counting_array[array[i]]++;
 	for (i = 0; i < size; i++)
