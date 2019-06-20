@@ -1,5 +1,14 @@
 #include "sort.h"
-
+/**
+ * func_pivot - select the pivot number as lumo\
+to function
+ *
+ * @array: List of integers to be sorted
+ * @init: First element in the array
+ * @last: Last element in the array
+ * @size: Length of the array
+ * Return: Nothing
+ */
 int func_pivot(int *array, int first, int last, size_t size)
 {
 	int num, j, tmp;
