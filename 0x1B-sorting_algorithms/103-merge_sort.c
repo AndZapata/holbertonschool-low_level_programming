@@ -1,56 +1,79 @@
 #include "sort.h"
-
-void print(int *a, int *buf, size_t l_i, size_t l_m, size_t r_i, size_t r_m)
+/**
+ *print - function to print the merge result
+ * @a: list of integers to be sorted
+ * @b: Buffer to create a sorted array
+ * @first: First part of the array
+ * @mid: Medium part of the array
+ * @end: last part of the array
+ * @end_m: Variable to take middle in a array
+ * Return: Nothing
+ */
+void print(int *a, int *b, size_t first, size_t mid, size_t end, size_t end_m)
 {
-    size_t left, l_size, right, r_size, i;
+	size_t left_i, left_s, right_i, right_s, i;
 
-    left = l_i;
-    l_size = l_m - l_i + 1;
-    right = r_i;
-    r_size = r_m - r_i + 1;
-    i = l_i;
+	left_i = first;
+	left_s = mid - first + 1;
+	right_i = end;
+	right_s = end_m - end + 1;
+	i = first;
 
-    printf("Merging...\n");
-    printf("[left]: ");
-    print_array(a + left, l_size);
-    printf("[right]: ");
-    print_array(a + right, r_size);
+	printf("Merging...\n");
+	printf("[left]: ");
+	print_array(a + left_i, left_s);
+	printf("[right]: ");
+	print_array(a + right_i, right_s);
 
-    while (l_i <= l_m && r_i <= r_m)
-    {
-        if (a[l_i] <= a[r_i])
-            buf[i++] = a[l_i++];
-        else
-            buf[i++] = a[r_i++];
-    }
-    while (l_i <= l_m)
-        buf[i++] = a[l_i++];
-    while (r_i <= r_m)
-        buf[i++] = a[r_i++];
+	while (first <= mid && end <= end_m)
+	{
+		if (a[first] <= a[end])
+			b[i++] = a[first++];
+		else
+			b[i++] = a[end++];
+	}
+	while (first <= mid)
+		b[i++] = a[first++];
+	while (end <= end_m)
+		b[i++] = a[end++];
 
-    for (i = left; i <= r_m; i++)
-        a[i] = buf[i];
+	for (i = left_i; i <= end_m; i++)
+		a[i] = b[i];
 
-    printf("[Done]: ");
-    print_array(a + left, l_size + r_size);
+	printf("[Done]: ");
+	print_array(a + left_i, left_s + right_s);
 }
 
-void recursive_func(int *array, int *buf, size_t init, size_t max)
+/**
+ * merge_div - function to divide the array in parts to be sorted
+ * @array: list of integers to be sorted
+ * @buf: Buffer to create a sorted array
+ * @first: First part of the array
+ * @end: last part of the array
+ * Return: Nothing
+ */
+void merge_div(int *array, int *buf, size_t first, size_t end)
 {
-    if (max > init)
-    {
-        recursive_func(array, buf, init, (init + max + 1) / 2 - 1);
-        recursive_func(array, buf, (init + max + 1) / 2, max);
-        print(array, buf, init, (init + max + 1) / 2 - 1,
-              (init + max + 1) / 2, max);
-    }
+	if (end > first)
+	{
+		merge_div(array, buf, first, (first + end + 1) / 2 - 1);
+		merge_div(array, buf, (first + end + 1) / 2, end);
+		print(array, buf, first, (first + end + 1) / 2 - 1,
+		      (first + end + 1) / 2, end);
+	}
 }
 
+/**
+ * merge_sort - function to sort in merge algorithm
+ * @array: list of integers to be sorted
+ * @size: lenght of the array
+ * Return: Nothing
+ */
 void merge_sort(int *array, size_t size)
 {
-    int buf[10000];
+	int buf[10000];
 
-    if (!array || size < 2)
-        return;
-    recursive_func(array, buf, 0, size - 1);
+	if (!array || size < 2)
+		return;
+	merge_div(array, buf, 0, size - 1);
 }
