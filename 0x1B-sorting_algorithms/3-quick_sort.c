@@ -4,7 +4,7 @@
 to function
  *
  * @array: List of integers to be sorted
- * @init: First element in the array
+ * @first: First element in the array
  * @last: Last element in the array
  * @size: Length of the array
  * Return: Nothing
