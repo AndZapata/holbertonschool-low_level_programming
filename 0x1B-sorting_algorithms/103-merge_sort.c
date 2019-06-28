@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * print - function to print in merge format
+ * prf - function to print in merge format
  * @array: List of integers to be sorted
  * @buf: buffer to keep enought space to the list
  * @lf: Left partition
@@ -11,7 +11,7 @@
  *
  * Return: Nothing
  */
-void print(int *array, int *buf, size_t lf, size_t mdlf, size_t rg, size_t mdrg)
+void prf(int *array, int *buf, size_t lf, size_t mdlf, size_t rg, size_t mdrg)
 {
 	size_t left, sizelf, right, sizerg, i;
 
@@ -61,13 +61,13 @@ void partition(int *array, int *buf, size_t first, size_t last)
 	{
 		partition(array, buf, first, (first + last + 1) / 2 - 1);
 		partition(array, buf, (first + last + 1) / 2, last);
-		print(array, buf, first, (first + last + 1) / 2 - 1,
+		prf(array, buf, first, (first + last + 1) / 2 - 1,
 		      (first + last + 1) / 2, last);
 	}
 }
 
 /**
- * merge_sort: function that sorts an array of integers in ascending
+ * merge_sort - function that sorts an array of integers in ascending
  * order using the Merge sort algorithm
  * @array: list of integers to be sorted
  * @size: lenght of the array
